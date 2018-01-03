@@ -1,0 +1,56 @@
+<!-- Third Container (Grid) -->
+<div class="container bg-3 text-center content-padding">
+
+  <div class="row text-center">
+    <!-- <h3 class="margin">Where To Find Me?
+      <i class="far fa-stop-circle f28d"></i>
+    </h3> -->
+    <div class="col-sm-12" style="margin:25px 0px 25px 0px">
+      <div class="btn-group btn-group-justified">
+        <a class="btn btn-info " style="padding:20px"  (click)="filterBy('all')">
+          <p>
+            <strong>All</strong> <span class="badge">{{total}}</span>
+          </p>
+        </a>
+        <a class="btn btn-success active" style="padding:20px" (click)="filterBy('veg')">
+          <p>
+            <strong>Veg</strong> <span class="badge">{{veg_count}}</span>
+          </p>
+        </a>
+        <a class="btn btn-danger" style="padding:20px" (click)="filterBy('nonveg')">
+          <p>
+            <strong>Non Veg </strong><span class="badge">{{nonveg_count}}</span>
+          </p>
+        </a>
+        <a class="btn btn-warning" style="padding:20px" (click)="filterBy('snacks')">
+          <p>
+            <strong>Snacks <span class="badge">{{snacks_count}}</span></strong>
+          </p>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-3" data-toggle="modal" data-target="#myModal" *ngFor="let menu of filterdMenu">
+      <div class="box">
+        <div class="text animated fadeInDown">
+          <div class="thumbnail">
+            <img src="{{ menu.img }}" alt="Paris" width="400" height="200">
+            <div class="row">
+              <div class="col-sm-8">
+                <p>
+                  <strong>{{ menu.name }}</strong>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p>
+                  <strong>{{ menu.price }} $</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-menu-detail></app-menu-detail>

@@ -1,0 +1,24 @@
+<div class="container content-padding ">
+  <div class="row">
+    <!-- <h3 class="margin">Where To Find Me?
+          <i class="far fa-stop-circle f28d"></i>
+        </h3> -->
+    <div class="col-sm-12" style="margin:25px 0px 25px 0px">
+      <div class="btn-group btn-group-justified">
+        <a class="btn btn-info " style="padding:20px" (click)="flip()" [ngClass]="{'activetab': showMenuList}">
+          <p>
+            <strong>Menu</strong>
+          </p>
+        </a>
+        <a class="btn btn-success active" style="padding:20px" [ngClass]="{'activetab': !showMenuList} " (click)="flip()">
+          <p>
+            <strong>Add New Menu</strong>
+          </p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+  <app-add *ngIf="!showMenuList"></app-add>
+  <app-product *ngIf="showMenuList"></app-product>
+</div>

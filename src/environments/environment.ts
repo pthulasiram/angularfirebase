@@ -4,5 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  name: 'Prasuna\'s Kitchen',
+  address: '9400 N.MacArthur Blvd, Ste 140, Irving, TX 75063, US'
 };

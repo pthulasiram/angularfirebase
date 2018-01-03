@@ -1,0 +1,37 @@
+<div class="container-fluid">
+ 
+    <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Menu Items</h3>
+        </div>
+        <div class="panel-body">
+         <table class="table table-bordered">
+              <thead class="bg-danger">
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Category</th>
+                  <th>image</th>
+                  <th>Today's Special</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let fileupload of (fileUploads|async); let i=index">
+                  <td>{{ fileupload.name}}</td>
+                  <td>{{ fileupload.price}}</td>
+                  <td>{{ fileupload.category}}</td>
+                  <td> <img src="{{fileupload.url}}" class="product-img"/></td>
+                  <td> {{fileupload.today}}</td>
+                  <td>
+                    <button class="btn btn-success"  (click)="delete(fileupload.$key, fileupload.name)">Delete</button>
+                  </td>
+        
+                </tr>
+          
+              </tbody>
+            </table>
+        </div>
+      </div>
+    
+</div>

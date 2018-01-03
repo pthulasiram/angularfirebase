@@ -1,0 +1,71 @@
+<!-- Container (Contact Section) -->
+<div class="container content-padding ">
+  <div class="row">
+    <div class="col-sm-5">
+      <h3 class="margin"> Better yet, see us in person!</h3>
+      <p>We love our customers, so feel free to visit during normal business hours.
+        <p>
+          <span class="glyphicon glyphicon-map-marker"></span> {{ contact.street }}
+          <br/> {{ contact.state }}</p>
+        <p>
+          <span class="glyphicon glyphicon-phone"></span> {{ contact.phone }}</p>
+        <p>
+          <span class="glyphicon glyphicon-envelope"></span> {{ contact.email }}</p>
+    </div>
+    <div class="col-sm-7">
+      <!-- <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+      <div class="container-fluid">
+        <h3> Business Hours</h3>
+        <table class="table table-bordered">
+          <thead class="bg-danger">
+            <tr>
+              <th>Day</th>
+              <th>Open</th>
+              <th>Close</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let work of bHours; let i=index">
+              <td>{{ work.day }}</td>
+              <td>{{ work.open }} PM</td>
+              <td>{{ work.close }} PM</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="container bg-3 text-center content-padding">
+      <div class="box">
+        <div class="text animated fadeInDown">
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="18" [minZoom]="12" [maxZoom]="20" [fullscreenControl]=true [mapTypeControl]=true>
+            <!-- <appAgmDirection *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></appAgmDirection> -->
+
+            <agm-marker [latitude]="lat" [longitude]="lng">
+              <!-- <agm-info-window>
+          <p>{{ name }}</p>
+          <p>{{address }}</p>
+        </agm-info-window> -->
+            </agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    </div>

@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: 'Ubuntu';
+  font-size: 22px;
+  line-height: 1.8;
+  color: black;
+  overflow: auto;
+}
+
+p {
+  font-size: 16px;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+.thumbnail p {
+    margin-top: 15px;
+    color: #555;
+}
+/* .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+}
+.btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+} */
+
+.modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+}
+.modal-header, .modal-body {
+    padding: 40px 50px;
+}
+
+
+.margin {
+  margin-bottom: 45px;
+}
+
+.bg-1 {
+  background-color: #1abc9c;
+  /* Green */
+  color: #ffffff;
+}
+
+.bg-2 {
+  background-color: #474e5d;
+  /* Dark Blue */
+  color: #ffffff;
+}
+
+.bg-3 {
+  background-color: #ffffff;
+  /* White */
+  color: #555555;
+}
+
+.bg-4 {
+  background-color: #2f2f2f;
+  /* Black Gray */
+  color: #fff;
+}
+
+.content-padding {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top:55px;
+}
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.navbar-nav li a:hover {
+  color: #1abc9c !important;
+}
+
+.agm-info-window-content {
+  color: black;
+  font-size: 20px;
+}
+table {
+    font-size: 16px;
+}
