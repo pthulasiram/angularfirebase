@@ -25,8 +25,8 @@
         <div class="form-group">
           <label>Todays Special</label>
           <div class="form-control">
-            <input type="radio" name="today" value='yes' formControlName="today" [(ngModel)]='today'>Yes
-            <input type="radio" name='today' value='no' formControlName="today" [(ngModel)]='today' checked="checked">No
+            <input type="radio" name="today" value='yes' formControlName="today">Yes
+            <input type="radio" name='today' value='no' formControlName="today"  checked="checked">No
           </div>
         </div>
 
@@ -35,7 +35,7 @@
           <label>Category</label>
           <select class="form-control" formControlName="category">
             <!-- <option value="">Please select category</option> -->
-            <option *ngFor="let category of categories" [value]="category">{{category}}
+            <option *ngFor="let x of categories" [value]="x">{{x}}
             </option>
           </select>
         </div>
@@ -50,7 +50,7 @@
           {{progress.percentage}}%</div>
       </div>
 
-      <div *ngIf="uploadService.addOprStatus" class="alert alert-success" role="alert">
+      <div *ngIf="uploadService.addOprStatus | async" class="alert alert-success" role="alert">
         Menu Added successfully ..
 
       </div>

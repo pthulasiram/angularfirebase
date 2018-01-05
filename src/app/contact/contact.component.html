@@ -2,16 +2,31 @@
 <div class="container content-padding ">
   <div class="row">
     <div class="col-sm-5">
-      <h3 class="margin"> Better yet, see us in person!</h3>
+
+        <div class="page-header text-left text-warning">
+            <h2>
+              <strong>Reach Us</strong>
+            </h2>
+          </div>
       <p>We love our customers, so feel free to visit during normal business hours.
-        <p>
-          <span class="glyphicon glyphicon-map-marker"></span> {{ contact.street }}
-          <br/> {{ contact.state }}</p>
-        <p>
-          <span class="glyphicon glyphicon-phone"></span> {{ contact.phone }}</p>
-        <p>
-          <span class="glyphicon glyphicon-envelope"></span> {{ contact.email }}</p>
+        <div class="well well-lg animated fadeInUp">
+          <p>
+            <span class="glyphicon glyphicon-map-marker"></span> {{ contact.street }}
+            <span>
+              <br/> {{ contact.state }}</span>
+          </p>
+          <p>
+            <span class="glyphicon glyphicon-phone"></span> {{ contact.phone }}</p>
+          <p>
+            <span class="glyphicon glyphicon-envelope"></span> {{ contact.email }}</p>
+        </div>
+
+        <div class="container">
+
+
+        </div>
     </div>
+
     <div class="col-sm-7">
       <!-- <div class="row">
         <div class="col-sm-6 form-group">
@@ -30,8 +45,12 @@
       </div>
     </div>
   </div> -->
-      <div class="container-fluid">
-        <h3> Business Hours</h3>
+      <div class="container-fluid animated fadeInUp">
+        <div class="page-header text-left text-danger">
+          <h2>
+            <strong>Business Hours</strong>
+          </h2>
+        </div>
         <table class="table table-bordered">
           <thead class="bg-danger">
             <tr>
@@ -52,9 +71,13 @@
       </div>
 
     </div>
-
-    <div class="container bg-3 text-center content-padding">
+    <div class="container bg-3 content-padding">
       <div class="box">
+        <button class="btn btn-danger " (click)="getDirections()">
+
+          Get Directions
+
+        </button>
         <div class="text animated fadeInDown">
           <agm-map [latitude]="lat" [longitude]="lng" [zoom]="18" [minZoom]="12" [maxZoom]="20" [fullscreenControl]=true [mapTypeControl]=true>
             <!-- <appAgmDirection *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></appAgmDirection> -->

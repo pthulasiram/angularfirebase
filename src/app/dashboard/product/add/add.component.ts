@@ -62,6 +62,7 @@ export class AddComponent implements OnInit {
       this.currentFileUpload.price = this.myform.value['price'];
       this.currentFileUpload.description = this.myform.value['description'];
       this.currentFileUpload.today = this.myform.value['today'];
+      this.currentFileUpload.category = this.myform.value['category'];
     }
 
 

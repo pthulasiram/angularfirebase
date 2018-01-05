@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  name: 'Prasuna\'s Kitchen',
+  name: 'Prasuna',
   firebaseconfig: {
 
     apiKey: 'AIzaSyCjEMcnUebf4uCh5NvG-SpPsSWKsJzqwR8',
@@ -22,6 +22,7 @@ export const environment = {
     lat: 32.933557,
     lng: -96.951568
   },
+  direction: 'https://www.google.com/maps/place/Prasuna\'s+Kitchen/@32.933528,-96.951568,19z/data=!4m5!3m4!1s0x0:0x537d96dd27612465!8m2!3d32.9335304!4d-96.9515622?hl=en-GB',
   businessHours: [
     { day: 'Monday', open: '4:00', close: '9:00' },
     { day: 'Tuesday', open: '4:00', close: '9:00' },

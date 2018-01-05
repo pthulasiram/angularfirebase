@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    if (this.authService.user$ != null) {
-         this.authService.logOut();
-    }
+    // if (this.authService.user$ != null) {
+    //      this.authService.logOut();
+    // }
   }
 
 }

@@ -7,50 +7,60 @@
     </h3> -->
     <div class="col-sm-12" style="margin:25px 0px 25px 0px">
       <div class="btn-group btn-group-justified">
-        <a class="btn btn-info " style="padding:20px"  (click)="filterBy('all')">
+
+        <a class="btn btn-info " style="padding:20px" (click)="filterBy('all')" [ngClass]="{'activeTab': currentTab === 'all' }">
           <p>
-            <strong>All</strong> <span class="badge">{{total}}</span>
+            <strong>All</strong>
+            <span class="badge">{{total}}</span>
           </p>
         </a>
-        <a class="btn btn-success active" style="padding:20px" (click)="filterBy('veg')">
+        <a class="btn btn-success" style="padding:20px" (click)="filterBy('veg')" [ngClass]="{'activeTab': currentTab === 'veg' }">
           <p>
-            <strong>Veg</strong> <span class="badge">{{veg_count}}</span>
+            <strong>Veg</strong>
+            <span class="badge">{{veg_count}}</span>
           </p>
         </a>
-        <a class="btn btn-danger" style="padding:20px" (click)="filterBy('nonveg')">
+        <a class="btn btn-danger" style="padding:20px" (click)="filterBy('nonveg')" [ngClass]="{'activeTab': currentTab === 'nonveg' }">
           <p>
-            <strong>Non Veg </strong><span class="badge">{{nonveg_count}}</span>
+            <strong>Non Veg </strong>
+            <span class="badge">{{nonveg_count}}</span>
           </p>
         </a>
-        <a class="btn btn-warning" style="padding:20px" (click)="filterBy('snacks')">
+        <a class="btn btn-warning" style="padding:20px" (click)="filterBy('snacks')" [ngClass]="{'activeTab': currentTab === 'snacks' }">
           <p>
-            <strong>Snacks <span class="badge">{{snacks_count}}</span></strong>
+            <strong>Snacks
+              <span class="badge">{{snacks_count}}</span>
+            </strong>
           </p>
         </a>
       </div>
     </div>
-    <div class="col-sm-3" data-toggle="modal" data-target="#myModal" *ngFor="let menu of filterdMenu">
-      <div class="box">
-        <div class="text animated fadeInDown">
-          <div class="thumbnail">
-            <img src="{{ menu.img }}" alt="Paris" width="400" height="200">
-            <div class="row">
-              <div class="col-sm-8">
-                <p>
-                  <strong>{{ menu.name }}</strong>
-                </p>
-              </div>
-              <div class="col-sm-4">
-                <p>
-                  <strong>{{ menu.price }} $</strong>
-                </p>
+    <div>
+      <div class="row">
+        <div class="col-md-3 col-sm-12" *ngFor="let menu of filterdMenu">
+          <div class="box text-justify">
+            <div class="text animated fadeInDown">
+              <div class="thumbnail">
+                <img src="{{ menu.url }}" alt="Paris" width="400" height="200">
+                <div class="container-fluid">
+                  <div class="row text-justify">
+                    <div class="col-sm-7">
+                      <p style="color:green">
+                        <strong>{{ menu.name }}</strong>
+                      </p>
+                    </div>
+                    <div class="col-sm-5">
+                      <p style="color:orange">
+                        <strong>{{ menu.price }} $</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-</div>
-<app-menu-detail></app-menu-detail>
+    </div>
+    <app-menu-detail></app-menu-detail>

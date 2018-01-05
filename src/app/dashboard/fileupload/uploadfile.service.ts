@@ -1,29 +1,30 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import * as firebase from 'firebase';
-
 import { Fileupload } from './fileupload';
 import { Observable } from 'rxjs/Observable';
 import { debuglog } from 'util';
+import * as firebase from 'firebase';
+
+
 
 @Injectable()
 export class UploadFileService {
-  public addOprStatus: boolean = false;
+  public addOprStatus: Observable<Boolean>;
   fileUploads: Observable<Fileupload[]>;
   constructor(private db: AngularFireDatabase) { }
 
   private basePath = '/product';
 
   pushFileToStorage(fileUpload: Fileupload, progress: { percentage: number }) {
-    this.addOprStatus = false;
+    this.addOprStatus = new Observable(o => o.next(false));
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child(`${this.basePath}/${fileUpload.name}`).put(fileUpload.file);
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
-      (snapshot) => {
-        // in progress
-        const snap = snapshot as firebase.storage.UploadTaskSnapshot;
-        progress.percentage = Math.round((snap.bytesTransferred / snap.totalBytes) * 100);
+      (snapshot: any) => {
+        // upload in progress
+        const snap = snapshot;
+        progress.percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
       },
       (error) => {
         // fail
@@ -38,7 +39,7 @@ export class UploadFileService {
         fileUpload.today = fileUpload.today;
         fileUpload.description = fileUpload.description;
         this.saveFileData(fileUpload);
-        this.addOprStatus = true;
+        this.addOprStatus = new Observable(o => o.next(true));
 
       }
     );

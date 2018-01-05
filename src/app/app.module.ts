@@ -15,19 +15,18 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MenuDetailComponent } from './menu/menu-detail/menu-detail.component';
 import { AngularFireModule } from 'angularfire2';
-
-// New imports to update based on AngularFire2 version 4
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+// New imports to update based on AngularFire2 versio
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
-import * as firebase from 'firebase/app';
 import { ProductComponent } from './dashboard/product/product.component';
 import { UploadFileService } from './dashboard/fileupload/uploadfile.service';
 import { AddComponent } from './dashboard/product/add/add.component';
-
+import { CarouselComponent } from './carousel/carousel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +40,8 @@ import { AddComponent } from './dashboard/product/add/add.component';
     MenuDetailComponent,
     DashboardComponent,
     ProductComponent,
-    AddComponent
+    AddComponent,
+    CarouselComponent
   ],
   exports: [AgmDirectionDirective],
   imports: [
@@ -54,6 +54,7 @@ import { AddComponent } from './dashboard/product/add/add.component';
       apiKey: 'AIzaSyCjEMcnUebf4uCh5NvG-SpPsSWKsJzqwR8'
     }),
     AngularFireModule.initializeApp(environment.firebaseconfig),
+    AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],

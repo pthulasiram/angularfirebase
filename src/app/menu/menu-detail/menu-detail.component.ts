@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Fileupload } from '../../dashboard/fileupload/fileupload';
 
 @Component({
   selector: 'app-menu-detail',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuDetailComponent implements OnInit {
 
+  @Input() data: Fileupload;
   constructor() { }
 
   ngOnInit() {

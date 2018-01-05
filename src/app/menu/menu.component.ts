@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { UploadFileService } from '../dashboard/fileupload/uploadfile.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -18,26 +19,17 @@ export class MenuComponent implements OnInit {
   snacks_count: Number = 0;
   private basePath = '/product';
   filterdMenu: Array<Fileupload> = [];
+  currentTab: string;
   fileUploads: Observable<Fileupload[]>;
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
     this.fileUploads = this.getUploads();
-
-    this.fileUploads.subscribe((data) => { this.filterdMenu = data; }
-    );
-
     this.filterBy('veg');
-    this.veg_count = this.filterdMenu.length;
-
     this.filterBy('nonveg');
-    this.nonveg_count = this.filterdMenu.length;
-
     this.filterBy('snacks');
-    this.snacks_count = this.filterdMenu.length;
+    this.filterBy('all');
 
-    this.fileUploads.subscribe((data) => { this.filterdMenu = data; });
-    // this.total = this.filterdMenu.length;
   }
 
 
@@ -54,12 +46,28 @@ export class MenuComponent implements OnInit {
 
 
   filterBy(name: string) {
-    if (name === 'all') {
-      this.fileUploads.subscribe((data) => { this.filterdMenu = data; });
-    } else {
-      this.fileUploads.subscribe((data) => { this.filterdMenu = data.filter(menu => menu.category === name); });
+    this.fileUploads.subscribe((data) => {
+      this.filterdMenu = data;
+      if (name !== 'all') {
+        this.filterdMenu = this.filterdMenu.filter(menu => menu.category === name);
 
-      // this.filterdMenu = this.menus.filter(menu => menu.category === name);
+        switch (name) {
+          case 'veg':
+            this.veg_count = this.filterdMenu.length;
+            break;
+          case 'nonveg':
+            this.nonveg_count = this.filterdMenu.length;
+            break;
+          case 'snacks':
+            this.snacks_count = this.filterdMenu.length;
+            break;
+
+        }
+      } else {
+        this.total = this.filterdMenu.length;
+      }
+      this.currentTab = name;
     }
+    );
   }
 }

@@ -5,12 +5,12 @@
         </h3> -->
     <div class="col-sm-12" style="margin:25px 0px 25px 0px">
       <div class="btn-group btn-group-justified">
-        <a class="btn btn-info " style="padding:20px" (click)="flip()" [ngClass]="{'activetab': showMenuList}">
+        <a class="btn btn-info " style="padding:20px" (click)="flip('menu')" [ngClass]="{'activetab': active === 'menu'}">
           <p>
             <strong>Menu</strong>
           </p>
         </a>
-        <a class="btn btn-success active" style="padding:20px" [ngClass]="{'activetab': !showMenuList} " (click)="flip()">
+        <a class="btn btn-success" style="padding:20px" [ngClass]="{'activetab': active === 'add'} " (click)="flip('add')">
           <p>
             <strong>Add New Menu</strong>
           </p>
@@ -19,6 +19,6 @@
       </div>
     </div>
   </div>
-  <app-add *ngIf="!showMenuList"></app-add>
-  <app-product *ngIf="showMenuList"></app-product>
+  <app-add *ngIf=" active === 'add'"></app-add>
+  <app-product *ngIf="active === 'menu'"></app-product>
 </div>

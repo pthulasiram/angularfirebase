@@ -8,13 +8,35 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-  <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='../assets/css/animate.css' rel='stylesheet'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
 </head>
+
 <body>
   <app-root></app-root>
+  
+  <script>
+    $(document).ready(function () {
+      $(".navbar-nav li a").click(function (event) {
+        $(".navbar-collapse").collapse('hide');
+      });
+    });
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+   
+  </script>
 </body>
+
 </html>

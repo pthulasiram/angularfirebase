@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
-import { firebase } from '@firebase/app';
+import * as firebase from 'firebase';
 
 
 
@@ -25,10 +25,10 @@ export class AuthService {
         this.router.navigateByUrl('/dashboard');
       }
       )
-      .catch( (error) => {
+      .catch((error) => {
         this.handleError(error);
         this.router.navigateByUrl('');
-         }
+      }
       );
   }
 

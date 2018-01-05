@@ -1,6 +1,24 @@
-footer {
+/* footer {
   position: fixed;
   bottom: 1px;
   width: 100%;
   z-index: 1;
+} */
+
+footer {
+   
+    right: 0;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    padding: 1rem;
+    background-color: black;
+    text-align: center;
+    font-size: 16 px !important;
+   
+}
+
+
+footer p {
+    font-size: 16 px !important;
 }

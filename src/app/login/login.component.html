@@ -1,17 +1,24 @@
 <div class="container  content-padding">
-<h2 class="text-center">Sign In</h2>
-
+  <div class="page-header text-left text-danger">
+    <h2>
+      <strong>Sign In</strong>
+    </h2>
+  </div>
   <div class="container">
-    <label><b>Email</b></label>
+    <label>
+      <b>Email</b>
+    </label>
     <input type="text" placeholder="Enter email id" [(ngModel)]="email" required>
 
-    <label><b>Password</b></label>
+    <label>
+      <b>Password</b>
+    </label>
     <input type="password" placeholder="Enter Password" [(ngModel)]="password" required>
-        
-    <button (click) = "login()">Login</button>
+
+    <button (click)="login()">Sign In</button>
     <!-- <input type="checkbox" checked="checked"> Remember me -->
   </div>
-<!-- 
+  <!-- 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>

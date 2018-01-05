@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  showMenuList = true;
+  active: String = 'menu';
   constructor() { }
 
   ngOnInit() {
   }
 
-  flip() {
-    this.showMenuList = (this.showMenuList) ? false : true;
+  flip(name: string) {
+    this.active = name;
   }
 }
